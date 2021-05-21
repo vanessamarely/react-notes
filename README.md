@@ -17,7 +17,7 @@ Para trabajar exitosamente con React es necesario saber Javascript. De los conce
 * Variables y tipos de datos
 * Objetos y Arrays
 * Funciones y Classes
-* Estructuras de datos: condicionales y ciclos \(loopd\)
+* Estructuras de datos: condicionales y ciclos \(loops\)
 
 Otros conceptos útiles son:
 
