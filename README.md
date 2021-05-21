@@ -26,6 +26,10 @@ Otros conceptos útiles son:
 En React existen diferentes conceptos como: 
 
 * Componentes
+* JSX
+* Stafull / Staless component
+* Hooks
+* entre otros
 
 
 
