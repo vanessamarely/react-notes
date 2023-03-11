@@ -12,7 +12,11 @@ Mi nombre es [Vanessa Marely Aristizabal Angel](https://twitter.com/vanessamarel
 
 Soy apasionada por la tecnología y me gusta ayudar y contribuir a la comunidad.
 
-Espero visites mi **Gitbook** y si te gusta, puedas apoyar mi contenido siguiéndome en redes:
+Espero visites mi **Gitbook** y si te gusta, puedas apoyar mi contenido siguiéndome en redes y regalandome una estrella en mi repositorio: [https://github.com/vanessamarely/react-notes](https://github.com/vanessamarely/react-notes)
+
+
+
+**Redes sociales:**
 
 **Twitter**: [https://twitter.com/vanessamarely](https://twitter.com/vanessamarely)
 
