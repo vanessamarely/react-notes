@@ -1,6 +1,7 @@
 # Table of contents
 
 * [✨Aprendiendo React 😀💪](README.md)
+* [Sobre mí 👩‍💻](sobre-mi.md)
 * [⚛ React](master.md)
 
 ## Talleres
