@@ -629,3 +629,16 @@ Aquí podrás ver el ejercicio completo de la aplicación en React
 
 
 {% embed url="https://taller-gdg-react.stackblitz.io" %}
+
+## Ver todo el codigo
+
+
+
+[https://stackblitz.com/edit/taller-gdg-react](https://stackblitz.com/edit/taller-gdg-react)
+
+
+
+Con el extra:
+
+[https://stackblitz.com/edit/react-haqcb4](https://stackblitz.com/edit/react-haqcb4)
+
