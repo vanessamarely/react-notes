@@ -52,12 +52,14 @@ En la estructura de carpetas podrás apreciar en los Files, que se ha creado una
 
 Toda aplicación parte de un documento HTML. En la carpeta public al seleccionar el `index.html`, se puede encontrar el contenedor de nuestra aplicación.
 
-````html
-// Contenedor de la App
+{% code lineNumbers="true" %}
 ```html
+// Contenedor de la App
+
 <div id="root"></div>
+
 ```
-````
+{% endcode %}
 
 <figure><img src="../.gitbook/assets/Screenshot 2023-03-08 at 4.38.17 PM.png" alt=""><figcaption><p>index.html</p></figcaption></figure>
 
@@ -162,9 +164,10 @@ Vamos a usar la fuente en todo el documento, entonces vamos a usar el selector d
 
 Te quedara algo así en tu archivo `style.css`
 
-````css
-// styles
+{% code lineNumbers="true" %}
 ```css
+// styles
+
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
 
 body {
@@ -172,7 +175,7 @@ body {
 }
 
 ```
-````
+{% endcode %}
 
 <figure><img src="../.gitbook/assets/Screenshot 2023-03-10 at 4.51.01 PM.png" alt=""><figcaption></figcaption></figure>
 
@@ -359,6 +362,33 @@ Ademas vamos a crear una variable de estado para almacenar la información que e
 
 <figure><img src="../.gitbook/assets/Screenshot 2023-03-10 at 10.19.38 PM.png" alt=""><figcaption></figcaption></figure>
 
+{% code lineNumbers="true" %}
+```javascript
+
+import * as React from 'react';
+
+const Home = () => {
+  const [charactersList, setCharactersList] = React.useState([]);
+
+  React.useEffect(() => {
+    const list = fetch('https://rickandmortyapi.com/api/character/?page=1')
+      .then((response) => response.json())
+      .then((data) => setCharactersList(data.results))
+      .catch(console.error);
+  }, []);
+
+  return (
+    <main>
+      Hola mundo
+    </main>
+  );
+};
+
+export default Home;
+
+```
+{% endcode %}
+
 ## 4. Mostrar la información del Api en el documento
 
 
@@ -371,21 +401,24 @@ Dentro de las etiquetas `<main></main>`, vamos a incluir un titulo en un h1, una
 
 
 
-````javascript
+{% code lineNumbers="true" %}
 ```html
+
   <h1 className="title">Este es el taller de React</h1>
   <p className="text">
     Para este taller vamos a usar el api de Rick and Morty
   </p>
+
 ```
-````
+{% endcode %}
 
 Para el nombre con la imagen crearemos un `<div></div>` y dentro un `<picture></picture>`, con otras etiquetas y algunos atributos de clase, para mas adelante colocarle estilos.
 
 
 
-````
+{% code lineNumbers="true" %}
 ```html
+
    <div className="card">
     <picture className="card___image">
       <img src='imagen' alt='nombre' />
@@ -395,8 +428,9 @@ Para el nombre con la imagen crearemos un `<div></div>` y dentro un `<picture></
       species: <span>especie</span>
     </p>
   </div>
+
 ```
-````
+{% endcode %}
 
 
 
@@ -425,7 +459,7 @@ Ademas como vamos a necesitar recibir la información del personaje, vamos a usa
 {% hint style="info" %}
 **Destructuring** o **destructuración**, es descomponer o desempacar los valores o propiedades de un array o un objeto. Por ejemplo:
 
-\`\`\`javascript\
+\
 const objeto1 = {\
 &#x20; nombre: 'Ana',\
 &#x20; edad: 5\
@@ -433,7 +467,7 @@ const objeto1 = {\
 \
 //Destructuring\
 const  { nombre, edad } = objeto1;\
-\`\`\`
+
 {% endhint %}
 
 Ademas de la destructuración, para mostrar las variables o en este caso el objeto con las propiedades que estamos obteniendo por los props, vamos a usar interpolación.
@@ -448,9 +482,10 @@ Ademas de la destructuración, para mostrar las variables o en este caso el obje
 
 
 
-````
-
+{% code lineNumbers="true" %}
 ```javascript
+
+
 import * as React from 'react';
 import './Card.style.css';
 
@@ -469,8 +504,9 @@ const Card = ({ character }) => {
 };
 
 export default Card;
+
 ```
-````
+{% endcode %}
 
 Vamos a incluir nuestra Card en el componente Home.
 
@@ -478,20 +514,22 @@ Vamos a incluir nuestra Card en el componente Home.
 
 En el Home, dentro de las etiquetas `<main></main>`, crearemos un `<section></section>` con atributos de clase.&#x20;
 
-````javascript
+{% code lineNumbers="true" %}
 ```javascript
+
   <main>
     <section className="container___list">
     </section>
   </main>
+
 ```
-````
+{% endcode %}
 
 Como el ideal es mostrar no un personaje, sino varios, entonces vamos a necesitar una lista y un iterador o ciclo como el array para que recorra la cantidad de elementos que estamos trayendo del api. Para incluir la lista usamos la interpolación y del array que queremos obtener los datos usamos el map y en su función vamo a crear los elementos `<li></li>` donde en ellos incluiremos la \<Card>. El componente `<Card />` es importante recordar que se debe importar.
 
-{% code overflow="wrap" %}
-````javascript
+{% code overflow="wrap" lineNumbers="true" %}
 ```javascript
+
   <main>
     <section className="container___list">
       <ul className="list">
@@ -503,8 +541,8 @@ Como el ideal es mostrar no un personaje, sino varios, entonces vamos a necesita
       </ul>
     </section>
   </main>
+
 ```
-````
 {% endcode %}
 
 <figure><img src="../.gitbook/assets/Screenshot 2023-03-10 at 11.03.02 PM.png" alt=""><figcaption></figcaption></figure>
@@ -513,13 +551,15 @@ Si obtenemos un error como el anterior, importamos el Componente. Ademas es buen
 
 
 
-````
+{% code lineNumbers="true" %}
 ```javascript
+
 import Card from '../../components/Card';
 
 import './Home.style.css';
+
 ```
-````
+{% endcode %}
 
 Podemos incluir algunos estilos para ver mas bonita nuestra aplicación.
 
@@ -527,9 +567,9 @@ Podemos incluir algunos estilos para ver mas bonita nuestra aplicación.
 
 Si deseas incluir algunos estilos puedes usar los siguientes para las hojas del Home y de Card. Estos estilos pueden contener selectores adicionales, que es posible a este punto aún no hemos usado.
 
-{% code title="Card.style.css" %}
-````css
+{% code title="Card.style.css" lineNumbers="true" %}
 ```css
+
 .card {
   border: 0.1rem solid #3f51b5;
   border-radius: 1rem;
@@ -558,15 +598,15 @@ Si deseas incluir algunos estilos puedes usar los siguientes para las hojas del 
   text-align: center;
 }
 
+
 ```
-````
 {% endcode %}
 
 
 
-{% code title="Home.style.css" %}
-````css
+{% code title="Home.style.css" lineNumbers="true" %}
 ```css
+
 .button {
   background-color: cornflowerblue;
   border: 0;
@@ -607,9 +647,8 @@ Si deseas incluir algunos estilos puedes usar los siguientes para las hojas del 
   padding: 1rem;
 }
 
-```
 
-````
+```
 {% endcode %}
 
 A este punto nuestro proyecto lucirá así:
@@ -623,6 +662,23 @@ A este punto nuestro proyecto lucirá así:
 Es posible que a este punto nos hayamos quedado sin tiempo. Pero un plus es que selecciones una carta, para ello usamos el evento click y al seleccionarlo vas a ocultar la lista usando los ternarios (condicionales) y mostrar solo el personaje seleccionado. Y al darle click en un botón para verlo todo, podrás nuevamente ver toda la lista de personajes.
 
 Para esto puedes usar otra variable de estado, que te permita controlar la selección y otra que te guarde el elemento seleccionado.
+
+
+
+### Resolviendo este extra
+
+
+
+Vamos al elemento `<li></li>` a incluirle en evento click, para esto pondremos el atributo `onClick` y lo haremos igual a una función para manejar el click, que le pasaremos el objeto `character`.
+
+````
+```typescriptreact
+<li
+                key={character.id}
+                onClick={() => handleSelectedCard(character)}
+              >
+```
+````
 
 
 
