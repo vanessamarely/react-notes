@@ -4,8 +4,6 @@ description: Este taller pretende darte el primer acercamiento al uso de React.
 
 # 👩💻 Crea tu primera App en React
 
-
-
 ### 🤔 **¿Qué es React?**
 
 Es una biblioteca o librería de Javascript (**EcmaScript**) para crear interfaces de usuario.
@@ -657,6 +655,10 @@ A este punto nuestro proyecto lucirá así:
 
 {% embed url="https://react-haqcb4.stackblitz.io" %}
 
+{% embed url="https://stackblitz.com/edit/react-haqcb4" %}
+
+
+
 ## 6. Seleccionando una Card y ocultando la lista (Extra)
 
 Es posible que a este punto nos hayamos quedado sin tiempo. Pero un plus es que selecciones una carta, para ello usamos el evento click y al seleccionarlo vas a ocultar la lista usando los ternarios (condicionales) y mostrar solo el personaje seleccionado. Y al darle click en un botón para verlo todo, podrás nuevamente ver toda la lista de personajes.
@@ -671,32 +673,140 @@ Para esto puedes usar otra variable de estado, que te permita controlar la selec
 
 Vamos al elemento `<li></li>` a incluirle en evento click, para esto pondremos el atributo `onClick` y lo haremos igual a una función para manejar el click, que le pasaremos el objeto `character`.
 
-````
-```typescriptreact
+{% hint style="info" %}
+Los nombres de los eventos en React se debe usar con camelCase lowerCamelCase)
+{% endhint %}
+
+```javascript
 <li
-                key={character.id}
-                onClick={() => handleSelectedCard(character)}
-              >
+key={character.id}
+onClick={() => handleSelectedCard(character)}
+>
+
 ```
-````
+
+Vamos a definir la función handleSelectedCard y vamos a crear dos variables de estado; una variable para almacenar el eslemento seleccionado y la otra para saber si  se selecciono, entonces me guarde un true o false.
+
+Primero vamosa crear las dos variables de estado:
+
+{% code lineNumbers="true" %}
+```javascript
+
+const [isSelected, setSelected] = React.useState(false);
+const [selectedCharacter, setSelectedCharacter] = React.useState(null);
+
+```
+{% endcode %}
+
+Luego vamos a actualizar las variables de estado en la funcion que vamos a definir:
+
+{% code lineNumbers="true" %}
+```javascript
+
+const handleSelectedCard = (character) => {
+    setSelectedCharacter(character);
+    setSelected(true);
+};
+
+```
+{% endcode %}
 
 
 
-Aquí podrás ver el ejercicio completo de la aplicación en React
+Para mostrar nuestro elemento seleccionado, vamos a crear un elemento `<section></section>` y en el pondremos el componente `Card`, asignandole a la card en el prop del character, la variable de estado que creamos que tiene la info del personaje seleccionado. Ademas crearemos un botón con el texto "View All". Esta nueva sección va a quedar ubicado debajo de la anterior.
 
 
 
-{% embed url="https://taller-gdg-react.stackblitz.io" %}
+{% code lineNumbers="true" %}
+```javascript
+<section className="container__card">
+  <button
+    className="button"
+    type="button"
+  >
+    View All
+  </button>
+  <Card character={selectedCharacter} />
+</section>
+```
+{% endcode %}
 
-## Ver todo el codigo
+En el caso de ser seleccionada una `Card` de la Lista nuestra sección nueva se mostrará,  junto con el nuevo botón, que tendra el texto de 'View All' y la lista se ocultará. Cuando se seleccione el botón, se mostrará de nuevo la lista y la sección de la `Card` seleccionada se ocultará.&#x20;
+
+Entonces primero vamos a asignarle al boton el evento click, para que al seleccionarse cambie de estado, la nueva variable que creamos, para saber si el elemento se selecciono.
+
+{% code lineNumbers="true" %}
+```javascript
+
+<section className="container__card">
+    <button
+      className="button"
+      type="button"
+      onClick={() => setSelected(false)}
+    >
+      View All
+    </button>
+    <Card character={selectedCharacter} />
+  </section>
+
+```
+{% endcode %}
+
+Ahora para mostrar o ocultar una sección solo nos falta preguntar por el valor del estado de la variable `isSelected`. Para preguntar por el valor, vamos a usar ternarios.
+
+{% hint style="info" %}
+**Ternarios**, los ternarios son operadores de javascript, que nos permiten hacer condicionales de javascript, pero cortos. Su sintaxis es la siguiente:
+
+condicion ? expresión afirmativa : expresión negativa;
+{% endhint %}
+
+Vamos a meter las dos secciones en el ternario quedando así el código:
 
 
 
-[https://stackblitz.com/edit/taller-gdg-react](https://stackblitz.com/edit/taller-gdg-react)
+{% code lineNumbers="true" %}
+```javascript
+
+{!isSelected ? (
+  <section className="container___list">
+    <ul className="list">
+      {charactersList.map((character) => (
+        <li
+          key={character.id}
+          onClick={() => handleSelectedCard(character)}
+        >
+          <Card character={character} />
+        </li>
+      ))}
+    </ul>
+  </section>
+) : (
+  <section className="container__card">
+    <button
+      className="button"
+      type="button"
+      onClick={() => setSelected(false)}
+    >
+      View All
+    </button>
+    <Card character={selectedCharacter} />
+  </section>
+)}
+
+```
+{% endcode %}
 
 
 
-Con el extra:
+## Codigo del extra
 
-[https://stackblitz.com/edit/react-haqcb4](https://stackblitz.com/edit/react-haqcb4)
+
+
+Aquí podrás ver el ejercicio completo de la aplicación en React (Aunque en esta ocasión se creo en stackblitz usando el React Typescript)
+
+[https://taller-gdg-react.stackblitz.io/](https://taller-gdg-react.stackblitz.io/)
+
+{% embed url="https://stackblitz.com/edit/taller-gdg-react" %}
+
+
 
