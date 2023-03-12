@@ -489,7 +489,8 @@ En el Home, dentro de las etiquetas `<main></main>`, crearemos un `<section></se
 
 Como el ideal es mostrar no un personaje, sino varios, entonces vamos a necesitar una lista y un iterador o ciclo como el array para que recorra la cantidad de elementos que estamos trayendo del api. Para incluir la lista usamos la interpolación y del array que queremos obtener los datos usamos el map y en su función vamo a crear los elementos `<li></li>` donde en ellos incluiremos la \<Card>. El componente `<Card />` es importante recordar que se debe importar.
 
-````
+{% code overflow="wrap" %}
+````javascript
 ```javascript
   <main>
     <section className="container___list">
@@ -504,6 +505,7 @@ Como el ideal es mostrar no un personaje, sino varios, entonces vamos a necesita
   </main>
 ```
 ````
+{% endcode %}
 
 <figure><img src="../.gitbook/assets/Screenshot 2023-03-10 at 11.03.02 PM.png" alt=""><figcaption></figcaption></figure>
 
