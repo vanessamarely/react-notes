@@ -26,3 +26,23 @@ npm run dev
 
 ```
 
+Una vez creado nuestro proyecto, tendremos la apliacion inicial con vite asi:
+
+<figure><img src="../.gitbook/assets/Screenshot 2023-03-15 at 1.54.07 PM.png" alt=""><figcaption><p>Hola mundo en Vite</p></figcaption></figure>
+
+Siguiendo el paso a paso del proyecto que hicimos en stackblitz:[ 'Crea tu primera App en React'](https://vanessa-aristizabal.gitbook.io/react-notes/talleres/crea-tu-primera-app-en-react), adicional esta este video para que lo sigas, obtendremos la misma aplicacion, pero localmente en nuestras maquinas.
+
+<figure><img src="../.gitbook/assets/Screenshot 2023-03-15 at 1.56.52 PM.png" alt=""><figcaption></figcaption></figure>
+
+
+
+Puedes ver el video para seguir el paso a paso:
+
+{% embed url="https://www.youtube.com/live/d5r6j2hvf1s?feature=share" %}
+
+
+
+Repositiorio:&#x20;
+
+{% embed url="https://github.com/vanessamarely/taller-react-gdg" %}
+
