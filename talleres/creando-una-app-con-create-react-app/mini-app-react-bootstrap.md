@@ -582,6 +582,16 @@ Para los Badges, vamos a crear un mock con la siguiente información, usando [ht
 
 En el componente badges usaremos las Card de Bootstrap, donde haremos un loop del api que creamos.
 
+Puedes ver en estos videos la realizacion del taller:
+
+
+
+{% embed url="https://www.youtube.com/watch?v=gA8R5nyayxI&t=2641s&ab_channel=vanessamarely" %}
+
+
+
+{% embed url="https://www.youtube.com/watch?v=veId2d1L39M&t=1150s&ab_channel=vanessamarely" %}
+
 ## Liks útiles:
 
 Repositorio: [https://github.com/vanessamarely/react-bootstrap](https://github.com/vanessamarely/react-bootstrap)
