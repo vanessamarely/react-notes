@@ -319,7 +319,7 @@ export default Home;
 
 Todo componente de react debe tener en la función return, obligatoriamente una etiqueta. Debe ser solo una y esta va a contener a todas las demás.
 
-en el **`index.js` ** vamos a realizar la exportación del componente Home.
+en el **`index.js`** vamos a realizar la exportación del componente Home.
 
 
 
